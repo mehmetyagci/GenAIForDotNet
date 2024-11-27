@@ -10,8 +10,6 @@ var configuration = new ConfigurationBuilder()
 
 string key = configuration["Azure:ApiKey"];
 string deploymentName = configuration["Azure:DeploymentName"];
-string serviceHub = configuration["Azure:ServiceHub"]; // Potential use in your setup
-string projectName = configuration["Azure:ProjectName"]; // Potential use in tracking or logging
 
 var client = new OpenAIClient(key);
 
@@ -33,8 +31,10 @@ while (true)
     var firstChoice = result.Value.Choices.FirstOrDefault();
     var answer = firstChoice?.Message?.Content;
 
+    // Answer added to the Chat History
     completionsOptions.Messages.Add(
         new ChatRequestAssistantMessage(answer));
+
     Console.WriteLine(answer);
     Console.WriteLine();
 
