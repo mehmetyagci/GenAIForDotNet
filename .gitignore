@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /GenAIForDotNet/appsettings.json
+/GenAIForDotNet_02_07/appsettings.json
